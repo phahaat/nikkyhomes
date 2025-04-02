@@ -1,18 +1,31 @@
-# nikkyhomes
-## Description
-NikkyHomes is a platform that allows users to find and list homes for sale or rent. It offers a user-friendly interface and powerful search capabilities.
-## Installation
-To install this project, clone the repository and run:
+# 🏡 NikkyHomes
+
+NikkyHomes is a modern real estate website built with **Spring Boot, MySQL, and JavaScript**, designed to showcase properties dynamically with an interactive UI.
+
+## 🚀 Features
+- ✅ User authentication with JWT
+- ✅ Property listings with filters
+- ✅ Interactive UI with JavaScript
+- ✅ Database integration with MySQL
+- ✅ Responsive and colorful design
+
+## 📂 Project Structure
+NikkyHomes/ │── src/ │ ├── main/ │ │ ├── java/nikkyhomes/ (Spring Boot Backend) │ │ ├── resources/ (Application properties & templates) │ ├── test/ (Testing files) │── frontend/ (HTML, CSS, JavaScript) │── README.md │── pom.xml (Maven dependencies)
+## ⚡ Installation
+### 1️⃣ Clone the Repository  
 ```sh
-git clone https://github.com/phahaat/nikkyhomes.git
-cd nikkyhomes
-## Usage
-After installation, run the application with:
-```sh
-python app.py
-## Contributing
-Contributions are welcome! Please fork the repository and submit a pull request.
-## License
-This project is licensed under the MIT License.
-## Contact
-For inquiries, please contact [phyloiceatieno00@gmail.com].
+git clone https://github.com/your-username/NikkyHomes.git
+cd NikkyHomes
+
+##configure the database
+spring.datasource.url=jdbc:mysql://localhost:3306/nikkyhomes
+spring.datasource.username=root
+spring.datasource.password=
+spring.jpa.hibernate.ddl-auto=update
+
+##Run the apllication
+mvn spring-boot:run
+
+###Open the website
+http://localhost:8080
+
