@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nikky Homes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Nikky Homes</h1>
+        <input type="text" id="searchBar" placeholder="Search properties..." aria-label="Search properties">
+    </header>
+
+    <section id="register" class="form-section">
+        <h2>Register</h2>
+        <form id="registerForm">
+            <input type="text" placeholder="Username" required>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Register</button>
+        </form>
+    </section>
+
+    <section id="login" class="form-section">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input type="text" placeholder="Username" required>
+            <input type="password" placeholder="Password" required>
+            <label><input type="checkbox" id="rememberMe"> Remember Me</label>
+            <button type="submit">Login</button>
+        </form>
+    </section>
+
+    <section id="intent" class="intent-section">
+        <h2>Select Your Intent</h2>
+        <div class="intent-selection">
+            <label><input type="radio" name="intent" value="buying" required> Looking to Buy Property</label>
+            <label><input type="radio" name="intent" value="window_shopping"> Just Window Shopping</label>
+            <label><input type="radio" name="intent" value="investor"> I’m an Investor</label>
+            <label><input type="radio" name="intent" value="leasing"> Interested in Leasing</label>
+            <label><input type="radio" name="intent" value="agent"> I’m an Agent</label>
+            <label><input type="radio" name="intent" value="admin"> I’m an Admin</label>
+            <button id="submitIntent">Submit Intent</button>
+        </div>
+    </section>
+
+    <section class="greeting">
+        <h2 class="welcome-title">WELCOME!</h2>
+        <p class="welcome-message">Thank you for visiting Nikky Homes. Explore our properties below!</p>
+    </section>
+
+    <h2 class="property-header">FEATURED PROPERTIES</h2>
+    <div class="property-list">
+        <!-- 20 Property Listings -->
+        <script>
+            const properties = [
+                { img: "images/home1.jpg", title: "Luxury Villa", desc: "5 beds, 4 baths, ocean view.", status: "Available" },
+                { img: "images/home2.jpg", title: "Modern Apartment", desc: "2 beds, 1 bath, city center.", status: "Sold" },
+                { img: "images/home3.jpg", title: "Cozy Cottage", desc: "3 beds, 2 baths, mountain area.", status: "Available" },
+                { img: "images/home4.jpg", title: "Spacious Condo", desc: "2 beds, 2 baths, lakefront view.", status: "Rented" },
+                { img: "images/home5.jpg", title: "Suburban House", desc: "4 beds, 3 baths, family-friendly.", status: "Available" },
+                { img: "images/home6.jpg", title: "Luxury Penthouse", desc: "3 beds, 3 baths, skyline view.", status: "Sold" },
+                { img: "images/home7.jpg", title: "Beachfront Bungalow", desc: "2 beds, 2 baths, oceanfront.", status: "Available" },
+                { img: "images/home8.jpg", title: "Country House", desc: "5 beds, 3 baths, quiet neighborhood.", status: "Rented" },
+                { img: "images/home9.jpg", title: "Modern Duplex", desc: "3 beds, 2.5 baths, gated community.", status: "Available" },
+                { img: "images/home10.jpg", title: "Luxury Townhouse", desc: "3 beds, 3 baths, near downtown.", status: "Sold" },
+                { img: "images/home11.jpg", title: "Farmhouse", desc: "6 beds, 4 baths, large yard.", status: "Available" },
+                { img: "images/home12.jpg", title: "Mountain Retreat", desc: "2 beds, 2 baths, scenic views.", status: "Available" },
+                { img: "images/home13.jpg", title: "Minimalist Apartment", desc: "1 bed, 1 bath, open space.", status: "Rented" },
+                { img: "images/home14.jpg", title: "Cozy Studio", desc: "1 bed, 1 bath, fully furnished.", status: "Available" },
+                { img: "images/home15.jpg", title: "Modern Loft", desc: "2 beds, 1.5 baths, stylish design.", status: "Sold" },
+                { img: "images/home16.jpg", title: "Countryside Mansion", desc: "6 beds, 5 baths, huge land.", status: "Available" },
+                { img: "images/home17.jpg", title: "Rustic Cabin", desc: "2 beds, 1 bath, forest area.", status: "Rented" },
+                { img: "images/home18.jpg", title: "Family Home", desc: "4 beds, 3 baths, great schools.", status: "Available" },
+                { img: "images/home19.jpg", title: "Luxury Estate", desc: "7 beds, 6 baths, private pool.", status: "Sold" },
+                { img: "images/home20.jpg", title: "Seaside Apartment", desc: "3 beds, 2 baths, beach access.", status: "Available" }
+            ];
+
+            properties.forEach(prop => {
+                document.write(`
+                    <div class="property-card">
+                        <img src="${prop.img}" alt="${prop.title}">
+                        <h3>${prop.title}</h3>
+                        <p>${prop.desc}</p>
+                        <p class="status ${prop.status.toLowerCase()}">${prop.status}</p>
+                    </div>
+                `);
+            });
+        </script>
+    </div>
+    <div id="property-list">
+        <p>Loading properties...</p>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
