@@ -115,25 +115,30 @@
              <url>https://repo1.maven.org/maven2/</url>
          </repository>
      </repositories>
- <build>
+<build>
     <plugins>
         
-        <plugin>
             <groupId>com.google.cloud.tools</groupId>
             <artifactId>jib-maven-plugin</artifactId>
             <version>3.2.1</version>
             <configuration>
                 
-                <mainClass>com.example.nikkyhomes.NikkyHomesApplication</mainClass>
-
-                
+                <from>
+                    <image>openjdk:17-jdk-alpine</image>
+                </from>
                 <to>
-                    <image>docker.io/phahaat/nikkyhomes</image> 
+                    <image>docker.io/phahaat/nikkyhomes</image>
                 </to>
+                <container>
+                    <mainClass>com.example.nikkyhomes.NikkyHomesApplication</mainClass> 
+                    <ports>
+                        <port>8080</port>
+                    </ports>
+                </container>
             </configuration>
         </plugin>
 
-        
+       
         <plugin>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-maven-plugin</artifactId>
@@ -151,4 +156,5 @@
         </plugin>
     </plugins>
 </build>
+
  </project>
